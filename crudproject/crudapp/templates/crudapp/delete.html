@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    Will be pemanently lost after deletion  "{{selectedcontact}}" ?
+    <input type="submit" value='Delete'/>
+
+
+</form>
+
+</body>
+</html>

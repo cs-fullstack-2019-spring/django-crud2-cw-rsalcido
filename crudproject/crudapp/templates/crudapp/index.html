@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+
+<h1>Index</h1>
+<a href="{% url 'contacts' %}">Add New User</a>
+
+{% csrf_token %}
+{% for contact in contact_list %}
+
+<p><a href="{% url 'edit' contact.id %}">
+    {{contact.name}}>
+</a>
+</p>
+<p>{{contact.email}}</p>
+<p>{{contact.phone_number}}</p>
+<p>
+    <a href="{% url 'delete' contact.id %}}">Delete User</a>
+</p>
+<hr/>
+
+{% endfor %}
+
+
+<input type="submit" value='Delete'/>
+
+</body>
+</html>
